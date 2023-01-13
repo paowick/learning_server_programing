@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link type="text/css" rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <div align="center">
+        <label>Email</label><br>
+        <input type="text" id="loginuser"><br>
+        <label>Password</label><br>
+        <input type="password" id="loginpassword"><br>
+        <div id="err" style="color: red;"></div><br>
+        <button type="reset" onclick="reset()" class="button">reset</button>
+        <button type="button" class="button" onclick="register()">register</button><br><br>
+        <button type="submit" class="button" onclick="submit()">login</button>
+    </div>
+
+
+
+</body>
+
+</html>
+<script>
+    let root = document.location.hostname
+    async function submit() {
+        let loginUser = document.getElementById('loginuser').value
+        let loginPassword = document.getElementById('loginpassword').value
+        let data = {
+            Email: loginUser,
+            Password: loginPassword
+        }
+        await fetch(`http://${root}/login`, {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.status === 'pass') {
+                    let root = document.location.hostname
+                    location.href = `http://${root}:80/user?id=${loginUser}`
+                    reset()
+                } else {
+                    let ERR = document.getElementById(`err`)
+                    ERR.innerHTML = "Wrong email or password"
+                }
+            })
+    }
+    function reset() {
+        document.getElementById('loginuser').value = null
+        document.getElementById('loginpassword').value = null
+    }
+    function register() {
+        var root = document.location.hostname
+        location.href = `http://${root}:80/register`
+    }
+</script>

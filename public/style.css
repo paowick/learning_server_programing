@@ -1,0 +1,13 @@
+.container{
+    background-color: aqua;
+}
+.box{
+    background-color: blue;
+    
+    margin: auto 40%;
+}
+.button{
+    width: 5em;
+    height: 2em;
+    margin: auto 1em;
+}

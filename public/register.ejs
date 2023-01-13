@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link type="text/css" rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+</head>
+
+<body align="center">
+    <div class="topic">
+        <h1>Student information form</h1>
+    </div>
+    <div class="center">
+        <div>
+
+            <label for="FirstName">FirstName</label><br>
+            <input type="text" id="FirstName"><br>
+
+            <label for="Lastname">Lastname</label><br>
+            <input type="Lastname" id="Lastname"><br>
+
+            <label for="Phone">Phone</label><br>
+            <input type="text" id="Phone"><br>
+
+            <label for="Email">Email</label><br>
+            <input type="text" id="Email"><br>
+            <label for="Password">Password</label><br>
+            <input type="text" id="Password"><br><br>
+
+
+
+            <label for="Province">Province</label><br>
+            <select id="Province">
+                <option value="other..">other...</option>
+                <% lists.forEach(function(user){ %>
+                    <option value=<%=user.name_en %>>
+                        <%= user.name_en %>
+                    </option>
+                    <% }) %>
+            </select>
+
+        </div>
+        <div>
+
+
+            <label>Choose your gender</label><br>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="male" checked>
+            <label for="female">Female</label>
+            <input type="radio" name="gender" value="female">
+            <br><br>
+            <label for="sec">Choose a Section:</label>
+            <select id="sec">
+                <option value="CPE1">CPE1</option>
+                <option value="CPE2">CPE2</option>
+
+            </select><br>
+            <label for="Birthday">Birthday :</label>
+            <input type="date" id="Birthday">
+            <!-- <input type="submit"> -->
+            <br> <br>
+            <button type="submit" class="button" onclick="submit()">submit</button>
+        </div>
+
+        <script>
+            let root = document.location.hostname
+            const url = `http://${root}:80/addUser`
+            async function submit() {
+                let fname = document.getElementById('FirstName').value
+                let lname = document.getElementById('Lastname').value
+                let phone = document.getElementById('Phone').value
+                let email = document.getElementById('Email').value
+                let password = document.getElementById('Password').value
+                let province = document.getElementById('Province')
+                let provinceop = province.options[province.selectedIndex].value
+                let gender = Array.from(document.getElementsByName("gender")).find(r => r.checked).value
+                let sec = document.getElementById('sec')
+                let secop = sec.options[sec.selectedIndex].value
+                let birthday = document.getElementById('Birthday').value
+
+                console.log(`${fname} ${lname} ${phone} ${email} ${password} ${provinceop} ${gender} ${secop} ${birthday}`);
+
+                const data = { 
+                    Firstname:fname,
+                    Lastname:lname,
+                    Phone:phone,
+                    Email:email,
+                    Password:password,
+                    Province:provinceop,
+                    Gender:gender,
+                    Sec:secop,
+                    birthday:birthday
+                 };
+
+                const raw = await fetch(`http://${root}:80/addUser`, {
+                    method: 'POST', // or 'PUT'
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+
+            }
+
+        </script>
+</body>
+
+</body>
+
+</html>
