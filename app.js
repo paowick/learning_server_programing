@@ -40,11 +40,9 @@ app.post('/addUser', async (req, res) => {
 
 app.post('/login', (req, res) => {
     let find = false
-    console.log(req.body);
     const data = JSON.parse(fs.readFileSync('data.json'))
     data.filter(element => {
         if ((req.body.Email === element.Email) && (req.body.Password === element.Password)) {
-            console.log(element);
             find = true
             return res.status(200).json({
                 status: 'pass',

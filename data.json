@@ -1,1 +1,35 @@
-[{"Firstname":"korn","Lastname":".","Phone":"123","Email":"korn2k9@gmail.com","Password":"123","Province":"Samut","Gender":"male","Sec":"CPE2","birthday":"2001-11-12"},{"Firstname":"a","Lastname":"a","Phone":"1","Email":"a","Password":"a","Province":"Samut","Gender":"male","Sec":"CPE1","birthday":"2023-01-03"},{"Firstname":"admin","Lastname":"admin","Phone":"0124345234","Email":"admin","Password":"1234","Province":"Pathum","Gender":"female","Sec":"CPE2","birthday":"2023-01-14"}]
+[
+    {
+        "Firstname": "korn",
+        "Lastname": ".",
+        "Phone": "123",
+        "Email": "korn2k9@gmail.com",
+        "Password": "123",
+        "Province": "Samut",
+        "Gender": "male",
+        "Sec": "CPE2",
+        "birthday": "2001-11-12"
+    },
+    {
+        "Firstname": "a",
+        "Lastname": "a",
+        "Phone": "1",
+        "Email": "a",
+        "Password": "a",
+        "Province": "Samut",
+        "Gender": "male",
+        "Sec": "CPE1",
+        "birthday": "2023-01-03"
+    },
+    {
+        "Firstname": "admin",
+        "Lastname": "admin",
+        "Phone": "0124345234",
+        "Email": "admin",
+        "Password": "1234",
+        "Province": "Pathum",
+        "Gender": "female",
+        "Sec": "CPE2",
+        "birthday": "2023-01-14"
+    }
+]

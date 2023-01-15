@@ -44,10 +44,9 @@
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 if (data.status === 'pass') {
                     let root = document.location.hostname
-                    location.href = `http://${root}:80/user?id=${loginUser}`
+                    location.href = `http://${root}/user?id=${data.body.Firstname}`
                     reset()
                 } else {
                     let ERR = document.getElementById(`err`)
