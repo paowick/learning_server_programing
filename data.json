@@ -31,5 +31,17 @@
         "Gender": "female",
         "Sec": "CPE2",
         "birthday": "2023-01-14"
+    },
+    {
+        "Firstname": "tui",
+        "Lastname": "naja",
+        "Phone": "0123",
+        "Email": "tuinaja",
+        "Password": "1",
+        "Province": "Trat",
+        "Gender": "male",
+        "Sec": "CPE2",
+        "birthday": "2023-01-26"
     }
+    
 ]

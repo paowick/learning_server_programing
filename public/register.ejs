@@ -67,7 +67,7 @@
 
         <script>
             let root = document.location.hostname
-            const url = `http://${root}:80/addUser`
+            const url = `https://${root}/addUser`
             async function submit() {
                 let fname = document.getElementById('FirstName').value
                 let lname = document.getElementById('Lastname').value
@@ -83,24 +83,27 @@
 
                 console.log(`${fname} ${lname} ${phone} ${email} ${password} ${provinceop} ${gender} ${secop} ${birthday}`);
 
-                const data = { 
-                    Firstname:fname,
-                    Lastname:lname,
-                    Phone:phone,
-                    Email:email,
-                    Password:password,
-                    Province:provinceop,
-                    Gender:gender,
-                    Sec:secop,
-                    birthday:birthday
-                 };
+                const data = {
+                    Firstname: fname,
+                    Lastname: lname,
+                    Phone: phone,
+                    Email: email,
+                    Password: password,
+                    Province: provinceop,
+                    Gender: gender,
+                    Sec: secop,
+                    birthday: birthday
+                };
 
-                const raw = await fetch(`http://${root}:80/addUser`, {
+                const raw = await fetch(`https://${root}/addUser`, {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(data),
+                }).then((res) => {
+                    var root = document.location.hostname
+                    location.href = `https://${root}/`
                 })
 
             }

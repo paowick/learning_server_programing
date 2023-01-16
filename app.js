@@ -1,7 +1,7 @@
 const express = require('express')
 const fs = require('fs')
 const app = express()
-const port = 80
+const port = 3001
 
 
 app.use(express.static('public'));
