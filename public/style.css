@@ -1,13 +1,26 @@
 .container{
-    background-color: aqua;
+    background-color:lightseagreen;
+    min-height: 500px;
+    min-width: 150px;
+    width: auto;
+    height: auto;
 }
 .box{
-    background-color: blue;
-    
-    margin: auto 40%;
+    margin-top: 20%;
 }
 .button{
     width: 5em;
     height: 2em;
     margin: auto 1em;
+    border-radius: 20px;
+    border: 0px;
+}
+.button:hover{
+    background-color: azure;
+}
+
+.inputtext{
+    border-radius: 5px;
+    border: 1px;
+    width: 10%;
 }

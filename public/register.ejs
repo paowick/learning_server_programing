@@ -9,31 +9,29 @@
     <title>register</title>
 </head>
 
-<body align="center">
-    <div class="topic">
-        <h1>Student information form</h1>
-    </div>
+<body align="center" class="container">
     <div class="center">
-        <div>
+        <div class="box" style="margin-top: 10%;">
+            <h1>Student information form</h1>
 
             <label for="FirstName">FirstName</label><br>
-            <input type="text" id="FirstName"><br>
+            <input type="text" class="inputtext" id="FirstName"><br>
 
             <label for="Lastname">Lastname</label><br>
-            <input type="Lastname" id="Lastname"><br>
+            <input type="Lastname" class="inputtext" id="Lastname"><br>
 
             <label for="Phone">Phone</label><br>
-            <input type="text" id="Phone"><br>
+            <input type="text" class="inputtext" id="Phone"><br>
 
             <label for="Email">Email</label><br>
-            <input type="text" id="Email"><br>
+            <input type="text" class="inputtext" id="Email"><br>
             <label for="Password">Password</label><br>
-            <input type="text" id="Password"><br><br>
+            <input type="text" class="inputtext" id="Password"><br><br>
 
 
 
             <label for="Province">Province</label><br>
-            <select id="Province">
+            <select id="Province" class="inputtext">
                 <option value="other..">other...</option>
                 <% lists.forEach(function(user){ %>
                     <option value=<%=user.name_en %>>
@@ -53,13 +51,13 @@
             <input type="radio" name="gender" value="female">
             <br><br>
             <label for="sec">Choose a Section:</label>
-            <select id="sec">
+            <select id="sec" class="inputtext">
                 <option value="CPE1">CPE1</option>
                 <option value="CPE2">CPE2</option>
 
             </select><br>
             <label for="Birthday">Birthday :</label>
-            <input type="date" id="Birthday">
+            <input type="date" class="inputtext" id="Birthday">
             <!-- <input type="submit"> -->
             <br> <br>
             <button type="submit" class="button" onclick="submit()">submit</button>
