@@ -35,7 +35,7 @@
             Email: loginUser,
             Password: loginPassword
         }
-        await fetch(`https://${root}/login/`, {
+        await fetch(`http://${root}/login/`, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -46,7 +46,7 @@
             .then((data) => {
                 if (data.status === 'pass') {
                     let root = document.location.hostname
-                    location.href = `https://${root}/user?id=${data.body.Firstname}`
+                    location.href = `http://${root}/user?id=${data.body.Firstname}`
                     reset()
                 } else {
                     let ERR = document.getElementById(`err`)
