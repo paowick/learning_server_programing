@@ -42,6 +42,15 @@
         "Gender": "male",
         "Sec": "CPE2",
         "birthday": "2023-01-26"
+    },
+    {
+        "Firstname": "",
+        "Lastname": "",
+        "Phone": "",
+        "Email": "",
+        "Password": "",
+        "Province": "other..",
+        "Gender": "male",
+        "Sec": "CPE1"
     }
-    
 ]

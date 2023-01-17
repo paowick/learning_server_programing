@@ -65,20 +65,19 @@
 
         <script>
             let root = document.location.hostname
-            const url = `https://${root}/addUser`
+            const url = `http://${root}/addUser`
             async function submit() {
-                let fname = document.getElementById('FirstName').value
-                let lname = document.getElementById('Lastname').value
-                let phone = document.getElementById('Phone').value
-                let email = document.getElementById('Email').value
-                let password = document.getElementById('Password').value
-                let province = document.getElementById('Province')
-                let provinceop = province.options[province.selectedIndex].value
-                let gender = Array.from(document.getElementsByName("gender")).find(r => r.checked).value
-                let sec = document.getElementById('sec')
-                let secop = sec.options[sec.selectedIndex].value
-                let birthday = document.getElementById('Birthday').value
-
+                const fname = document.getElementById('FirstName').value
+                const lname = document.getElementById('Lastname').value
+                const phone = document.getElementById('Phone').value
+                const email = document.getElementById('Email').value
+                const password = document.getElementById('Password').value
+                const province = document.getElementById('Province')
+                const provinceop = province.options[province.selectedIndex].value
+                const gender = Array.from(document.getElementsByName("gender")).find(r => r.checked).value
+                const sec = document.getElementById('sec')
+                const secop = sec.options[sec.selectedIndex].value
+                const birthday = document.getElementById('Birthday').valconst
                 console.log(`${fname} ${lname} ${phone} ${email} ${password} ${provinceop} ${gender} ${secop} ${birthday}`);
 
                 const data = {
@@ -101,7 +100,7 @@
                     body: JSON.stringify(data),
                 }).then((res) => {
                     var root = document.location.hostname
-                    location.href = `https://${root}/`
+                    location.href = `http://${root}/`
                 })
 
             }
